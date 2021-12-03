@@ -12,6 +12,10 @@
     "url": "https://github.com/SudoLand/Megalovania/issues"
   },
   "homepage": "https://github.com/SudoLand/Megalovania#readme",
+  "dependencies": {
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.64.4"
+  },
   "devDependencies": {
     "@sudoo/build-utils": "^1.0.0",
     "@sudoo/license": "^1.1.0",
