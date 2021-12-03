@@ -6,6 +6,7 @@
 
 import { getArgvFolderName } from "./cli/argv";
 import { MegalovaniaItem, readRecursiveMegalovaniaItems } from "./cli/io";
+import { startWebpackDevelopment } from "./cli/webpack-dev";
 
 const startCLI = async () => {
 
@@ -14,6 +15,8 @@ const startCLI = async () => {
     const items: MegalovaniaItem[] = await readRecursiveMegalovaniaItems(folder);
 
     console.log(items);
+
+    await startWebpackDevelopment();
 };
 
 (async () => {
