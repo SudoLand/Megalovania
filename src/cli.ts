@@ -4,10 +4,9 @@
  * @description CLI
  */
 
-import * as Path from "path";
 import * as Webpack from "webpack";
 import * as WebpackDevServer from "webpack-dev-server";
-import { readRecursiveFiles } from "./util/io";
+import { MegalovaniaItem, readRecursiveMegalovaniaItems } from "./cli/io";
 
 (async () => {
 
@@ -20,12 +19,10 @@ import { readRecursiveFiles } from "./util/io";
     }
 
     const folder: string = argv[0];
-    const fixedFolderPath: string = Path.resolve(folder);
 
-    const files: string[] = await readRecursiveFiles(fixedFolderPath);
-    const fixedFiles: string[] = files.map((filePath: string) => Path.join(fixedFolderPath, filePath));
+    const items: MegalovaniaItem[] = await readRecursiveMegalovaniaItems(folder);
 
-    console.log(fixedFiles);
+    console.log(items);
 
     process.exit(0);
 
