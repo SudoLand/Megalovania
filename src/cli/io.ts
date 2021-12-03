@@ -35,8 +35,6 @@ export const readRecursiveMegalovaniaItems = async (folderPath: string): Promise
 
             const scriptWithoutSuffix: string = file.substring(0, file.length - '.megalovania.json'.length);
 
-            console.log(scriptWithoutSuffix);
-
             for (const availableExtension of AvailableExtensions) {
 
                 if (fixedFiles.includes(`${scriptWithoutSuffix}.${availableExtension}`)) {
@@ -57,7 +55,7 @@ export const readRecursiveMegalovaniaItems = async (folderPath: string): Promise
                         });
                     } catch (error) {
 
-                        throw new Error(`[Megalovania] Failed to parse config: ${file}`);
+                        throw new Error(`Failed to parse config: ${file}`);
                     }
                 }
             }
