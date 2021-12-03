@@ -20,7 +20,7 @@ dev:
 
 cli-example:
 	@echo "[INFO] Running CLI example"
-	@NODE_ENV=development $(ts_node) --project $(dev) src/cli.ts
+	@NODE_ENV=development $(ts_node) --project $(dev) src/cli.ts example
 
 build:
 	@echo "[INFO] Building for production"
