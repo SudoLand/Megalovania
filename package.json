@@ -1,0 +1,37 @@
+{
+  "name": "megalovania",
+  "version": "0.0.0",
+  "description": "Simple React Component Development Kit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SudoLand/Megalovania.git"
+  },
+  "author": "WMXPY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SudoLand/Megalovania/issues"
+  },
+  "homepage": "https://github.com/SudoLand/Megalovania#readme",
+  "devDependencies": {
+    "@sudoo/build-utils": "^1.0.0",
+    "@sudoo/license": "^1.1.0",
+    "@sudoo/react-force": "^1.10.1",
+    "@sudoo/react-force-dev": "^1.10.1",
+    "@sudoo/triforce": "^2.16.1"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src/**/*.ts"
+    ],
+    "instrument": true,
+    "reporter": [
+      "json",
+      "text-summary"
+    ],
+    "report-dir": "coverage",
+    "sourceMap": true
+  }
+}

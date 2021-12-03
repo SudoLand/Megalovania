@@ -1,10 +1,11 @@
 {
     "cSpell.words": [
-        "WMXPY",
         "codecov",
+        "megalovania",
         "mocharc",
         "sudoo",
-        "triforce"
+        "triforce",
+        "WMXPY"
     ],
     "eslint.options": {
         "configFile": "./typescript/.eslintrc.json"
