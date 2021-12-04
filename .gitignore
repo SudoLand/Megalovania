@@ -21,6 +21,7 @@ coverage
 dist
 temp
 app
+.parcel-cache
 
 # lock
 yarn.lock
