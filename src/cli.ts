@@ -4,9 +4,11 @@
  * @description CLI
  */
 
+import { readTextFile } from "@sudoo/io";
 import { getArgvFolderName } from "./cli/argv";
 import { MegalovaniaItem, readRecursiveMegalovaniaItems } from "./cli/io";
-import { startWebpackDevelopment } from "./cli/webpack/start";
+import { parseTypeScriptScript } from "./language/typescript/parse";
+// import { startWebpackDevelopment } from "./cli/webpack/start";
 
 const startCLI = async () => {
 
@@ -14,9 +16,15 @@ const startCLI = async () => {
 
     const items: MegalovaniaItem[] = await readRecursiveMegalovaniaItems(folder);
 
-    console.log(items);
+    for (const item of items) {
 
-    await startWebpackDevelopment();
+        if (item.language === 'typescript') {
+
+            parseTypeScriptScript(await readTextFile(item.scriptPath));
+        }
+    }
+
+    // await startWebpackDevelopment();
 };
 
 (async () => {

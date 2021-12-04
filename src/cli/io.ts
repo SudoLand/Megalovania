@@ -13,6 +13,7 @@ import { readRecursiveFiles } from "../util/io";
 export type MegalovaniaItem = {
 
     readonly config: MegalovaniaConfig;
+    readonly language: 'typescript' | 'javascript';
 
     readonly jsonPath: string;
     readonly scriptPath: string;
@@ -49,6 +50,7 @@ export const readRecursiveMegalovaniaItems = async (folderPath: string): Promise
                         result.push({
 
                             config: parsedConfig,
+                            language: availableExtension === 'tsx' || availableExtension === 'ts' ? 'typescript' : 'javascript',
 
                             jsonPath: file,
                             scriptPath: `${scriptWithoutSuffix}.${availableExtension}`,
