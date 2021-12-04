@@ -13,21 +13,18 @@
   },
   "homepage": "https://github.com/SudoLand/Megalovania#readme",
   "dependencies": {
+    "@parcel/config-default": "^2.0.1",
+    "@parcel/core": "^2.0.1",
     "@sudoo/io": "^1.8.0",
-    "html-webpack-plugin": "^5.5.0",
-    "react-hot-loader": "^4.13.0",
-    "ts-loader": "^9.2.6",
-    "webpack": "^5.64.4",
-    "webpack-dev-server": "^4.6.0"
+    "react-hot-loader": "^4.13.0"
   },
   "devDependencies": {
+    "@parcel/types": "^2.0.1",
     "@sudoo/build-utils": "^1.0.0",
     "@sudoo/license": "^1.1.0",
     "@sudoo/react-force": "^1.10.1",
     "@sudoo/react-force-dev": "^1.10.1",
-    "@sudoo/triforce": "^2.16.1",
-    "@types/html-webpack-plugin": "^3.2.6",
-    "@types/webpack-dev-server": "^4.5.0"
+    "@sudoo/triforce": "^2.16.1"
   },
   "nyc": {
     "extension": [

@@ -6,7 +6,7 @@
 
 import { getArgvFolderName } from "./cli/argv";
 import { MegalovaniaItem, readRecursiveMegalovaniaItems } from "./cli/io";
-import { startWebpackDevelopment } from "./cli/webpack-dev";
+import { startParcelDevelopment } from "./cli/parcel/development";
 
 const startCLI = async () => {
 
@@ -16,17 +16,16 @@ const startCLI = async () => {
 
     console.log(items);
 
-    await startWebpackDevelopment();
+    await startParcelDevelopment();
 };
 
 (async () => {
 
-    console.log(`[Megalovania] Staring`);
+    console.log(`[Megalovania] Starting`);
 
     try {
 
         await startCLI();
-        console.log(`[Megalovania] Terminated`);
     } catch (err) {
 
         console.log(`[Megalovania] Failed due to an Error`);
