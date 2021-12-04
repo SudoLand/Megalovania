@@ -6,6 +6,15 @@
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import Hot from "./hot";
+import { Entry } from "./entry";
 
-ReactDOM.render((<Hot />), document.getElementById("container"));
+declare const module: any;
+
+ReactDOM.render(
+    (<Entry />),
+    document.getElementById("container"),
+);
+
+if (module.hot) {
+    module.hot.accept();
+}

@@ -6,7 +6,7 @@
 
 import { getArgvFolderName } from "./cli/argv";
 import { MegalovaniaItem, readRecursiveMegalovaniaItems } from "./cli/io";
-import { startWebpackDevelopment } from "./cli/webpack-dev";
+import { startWebpackDevelopment } from "./cli/webpack/start";
 
 const startCLI = async () => {
 

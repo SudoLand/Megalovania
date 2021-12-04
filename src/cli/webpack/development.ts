@@ -1,15 +1,28 @@
 /**
  * @author WMXPY
- * @namespace Megalovania_CLI
- * @description Webpack Dev
+ * @namespace Megalovania_CLI_Webpack
+ * @description Development
  */
 
 import * as HtmlWebpackPlugin from "html-webpack-plugin";
 import * as Webpack from "webpack";
 import * as WebpackDevServer from "webpack-dev-server";
-import { joinFromRoot, joinFromSrc } from "../util/path";
+import { joinFromRoot, joinFromSrc } from "../../util/path";
 
-export const startWebpackDevelopment = async (): Promise<void> => {
+export const createDevServerConfiguration = (): WebpackDevServer.Configuration => {
+
+    const devServerOptions: WebpackDevServer.Configuration = {
+
+        static: joinFromRoot('dist'),
+        port: '8765',
+        open: true,
+        hot: false,
+        client: false as any,
+    };
+    return devServerOptions;
+};
+
+export const createWebpackConfiguration = (): Webpack.Configuration => {
 
     const webpackConfig: Webpack.Configuration = {
 
@@ -26,16 +39,14 @@ export const startWebpackDevelopment = async (): Promise<void> => {
         module: {
             rules: [
                 {
-                    test: /\.tsx?$/,
-                    use: [
-                        {
-                            loader: 'ts-loader',
-                            options: {
-                                configFile: joinFromRoot('typescript', 'tsconfig.web.dev.json'),
-                                transpileOnly: false,
-                            },
+                    test: /\.(ts|js)x?$/i,
+                    use: {
+                        loader: 'ts-loader',
+                        options: {
+                            configFile: joinFromRoot('typescript', 'tsconfig.web.dev.json'),
+                            transpileOnly: false,
                         },
-                    ],
+                    },
                     exclude: /node_modules/,
                 },
             ],
@@ -47,27 +58,12 @@ export const startWebpackDevelopment = async (): Promise<void> => {
         devtool: 'inline-source-map',
         plugins: [
             new HtmlWebpackPlugin({
-                chunks: ['index'],
                 template: joinFromSrc('web', 'template.ejs'),
                 filename: 'index.html',
                 minify: false,
-                inject: true,
             }),
             new Webpack.HotModuleReplacementPlugin(),
         ],
     };
-
-    const devServerOptions: WebpackDevServer.Configuration = {
-
-        port: '8765',
-        static: joinFromRoot('dist'),
-        open: true,
-        hot: false,
-        client: false as any,
-    };
-
-    const compiler: Webpack.Compiler = Webpack(webpackConfig);
-    const devServer: WebpackDevServer = new WebpackDevServer(devServerOptions, compiler);
-
-    await devServer.start();
+    return webpackConfig;
 };
