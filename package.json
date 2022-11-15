@@ -15,7 +15,7 @@
   "dependencies": {
     "@sudoo/io": "^1.8.0",
     "html-webpack-plugin": "^5.5.0",
-    "react-hot-loader": "^4.13.0",
+    "react-hot-loader": "^4.13.1",
     "ts-loader": "^9.4.1",
     "typescript": "^4.8.4",
     "webpack": "^5.75.0",
