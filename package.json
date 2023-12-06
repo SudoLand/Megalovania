@@ -14,7 +14,7 @@
   "homepage": "https://github.com/SudoLand/Megalovania#readme",
   "dependencies": {
     "@sudoo/io": "^1.8.0",
-    "html-webpack-plugin": "^5.5.3",
+    "html-webpack-plugin": "^5.5.4",
     "react-hot-loader": "^4.13.1",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.2",
