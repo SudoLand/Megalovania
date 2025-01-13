@@ -16,7 +16,7 @@
     "@sudoo/io": "^1.8.0",
     "html-webpack-plugin": "^5.6.0",
     "react-hot-loader": "^4.13.1",
-    "ts-loader": "^9.5.1",
+    "ts-loader": "^9.5.2",
     "typescript": "^5.6.3",
     "webpack": "^5.94.0",
     "webpack-dev-server": "^5.1.0"
